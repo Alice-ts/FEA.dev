@@ -1,0 +1,45 @@
+# Esse código te dá a possibilidade de mudar as cores dos seus outputs
+
+class bcolors:
+    YELLOW = '\033[93m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+# Observe o rsultado dos prints
+
+print(bcolors.YELLOW + bcolors.BOLD +
+    "Nesse print, observe foi 'ativado' o amarelo e o negrito. " + bcolors.ENDC +
+    'Depois, o bcolors.ENDC foi usado para resetar a paleta.')
+
+# Agora que já temos as cores para os nossos prints, vamos para o próximo passo
+
+import time   #Essa é a biblioteca usada para mudar o tempo de saída dos prints.
+def I_Need_Help():   #Definimos a função.
+    print(bcolors.YELLOW + bcolors.BOLD + 'Oi! Sou o Python!'+ bcolors.ENDC)
+    time.sleep(2)    #.sleep fez o tempo entre os prints ser de 2 segundos nesse caso!
+    problem = input(bcolors.ENDC + bcolors.YELLOW + '\rComo Posso te ajudar?      ')
+    if problem == 'Não estou me sentindo muito bem':
+        time.sleep(1)
+        print(bcolors.YELLOW + bcolors.BOLD +'Você está...', end = '')
+        
+         # O argumento 'end' dentro do print serviu para concatenar o print seguinte.
+         
+        time.sleep(2)
+        print('Você sabe...', end = '')
+        time.sleep(2)
+        bcolors.ENDC
+        print( bcolors.YELLOW + 'Com aquele tipo ruim de pensamento?'+ bcolors.ENDC)
+        time.sleep(2)
+        problem2 =  input('\rPode confiar em mim:      ' )
+        if problem2 == 'Sim, e não sei o que fazer...':
+            time.sleep(1)
+            print(bcolors.YELLOW + bcolors.BOLD +'Você não está sozinho!', end = '')
+            time.sleep(2)
+            print(' Arraste para o lado e verá que você tem com quem contar!')
+            
+            
+                        
+# Agora, é só chamar a função
+
+I_Need_Help() 
